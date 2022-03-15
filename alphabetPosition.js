@@ -50,6 +50,7 @@ const alphabetPosition = (inputStr) => {
   positionValuesList = positionValuesList.filter((value) => value != 0);
 
   // convert to the array to string and return it
+  return positionValuesList.join(' ');
 };
 
 alphabetPosition('i am sam');
