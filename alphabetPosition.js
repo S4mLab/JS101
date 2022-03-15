@@ -30,19 +30,26 @@ const alphabetPosition = (inputStr) => {
     'y',
     'z',
   ];
+
   // break the string into an array of letters
   const inputLettersList = lowercasedInput.split('');
+
   // loop though input letter array
-  const positionValuesList = inputLettersList.map((letter) => {
+  let positionValuesList = inputLettersList.map((letter) => {
     // if the element is in the alphabet letters list
     if (alphabetLettersList.includes(letter)) {
       // replace it with its positions value in the alphabet
-      return alphabetLettersList.indexOf(letter);
+      return alphabetLettersList.indexOf(letter) + 1;
     } else {
-      // return nothing
+      // return 0 for now
+      return 0;
     }
   });
-  console.log(positionValuesList);
+
+  // filter out 0 in the position array
+  positionValuesList = positionValuesList.filter((value) => value != 0);
+
+  // convert to the array to string and return it
 };
 
-alphabetPosition('CaN YoU hEar mE');
+alphabetPosition('i am sam');
